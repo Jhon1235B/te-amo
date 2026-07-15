@@ -445,8 +445,8 @@
     color: rgba(122,16,48,.7);
     border: 1px solid rgba(122,16,48,.25);
     position:absolute;
-    top: 56px;
-    left: calc(50% + 90px);
+    top: 4px;
+    left: calc(50% + 96px);
     z-index:4;
     transition: top .28s ease, left .28s ease, opacity .5s ease, transform .5s ease;
   }
@@ -520,6 +520,7 @@
       height: 200px;
       margin-bottom: -14px;
     }
+    #no{ left: calc(50% + 70px); }
   }
 
   @media (max-width: 340px){
@@ -529,6 +530,7 @@
       height: 180px;
       margin-bottom: -30px;
     }
+    #no{ top: 46px; left: calc(50% - 44px); }
   }
 
   @media (min-width: 900px){
@@ -715,8 +717,9 @@
       return fetch(url).then(r => r.json());
     }
 
-    // Por ahora ambos mensajes se envían a tu propio número (modo prueba)
+  
     const myNumber = '+51968237345';
+    const herNumber = '+5214445338629';
     const noticeMsg = '¡Dije que sí! 🤍 Ya somos novios.';
     const loveMsg = 'Dijiste que sí 🤍 y desde ahora prometo cuidarte, hacerte reír todos los días y estar a tu lado en cada momento, bonito y no tan bonito. Gracias por elegirme y por confiar en mí. Te amo 💕✨';
 
@@ -726,7 +729,7 @@
 
     Promise.all([
       sendWhatsApp(myNumber, noticeMsg),
-      sendWhatsApp(myNumber, loveMsg)
+      sendWhatsApp(herNumber, loveMsg)
     ])
       .then(()=>{
         waStatus.textContent = 'Mensaje enviado ✓';
